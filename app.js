@@ -1,22 +1,24 @@
-import http from "http"
-import fs from "fs"
-import path from "path"
-import url from "url"
+const http = require("http")
+const fs = require("fs")
+const url = require("url")
+const path = require("path")
 
-function pageReadProtocol(response,path,contentType,responseCode){
-    
-    response.writeHead(responseCode,{'Content-Type':contentType})
-    
-}
+
+
 
 const httpServer = http.createServer((req,res)=>{
-    const reqUrl = fs.readFile(req.url,'utf-8',(err,data)=>{if (err) throw err})
+    const reqUrl = req.url
     console.log(reqUrl)
     switch(reqUrl){
         case '/':
             res.writeHead(200,{'Content-Type':"text/html"})
-            res.write('./index.html')
-            res.end()
+            res.write(reqUrl)
+            res.end(fs.readFile(reqUrl+'index.html',"utf-8",(err,data)=>{
+                if (err) { console.log("삐삐삑")}
+                else{
+                    
+                }
+            }))
             break;
         }
 })
