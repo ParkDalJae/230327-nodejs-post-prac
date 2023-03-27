@@ -12,9 +12,11 @@
   },
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/ParkDalJae/230327-nodejs-post-prac/issues"
   },
-  "homepage": "https://github.com/ParkDalJae/230327-nodejs-post-prac#readme"
+  "homepage": "https://github.com/ParkDalJae/230327-nodejs-post-prac#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
